@@ -1,0 +1,17 @@
+{
+    "name": "rescripts-electron",
+    "version": "1.0.0",
+    "repository": "https://github.com/zardoy/rescripts-electron.git",
+    "author": "Vitaly Turovsky <vital2580@icloud.com>",
+    "license": "MIT",
+    "dependencies": {
+        "react-scripts": "^4.0.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "@rescripts/cli": "^0.0.15",
+        "@rescripts/rescript-env": "^0.0.12"
+    }
+}
