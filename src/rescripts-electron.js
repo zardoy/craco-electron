@@ -12,11 +12,12 @@ const rescriptsrcFile = ".rescriptsrc.js";
 // with this function we're pretending that .rescriptsrc.js in the project root
 mockRequire(path.join(projectRoot, rescriptsrcFile), rescriptsrcFile);
 
-const rescriptsProcess = execa("rescripts", process.argv.slice(2));
+const rescriptsProcess = execa("rescripts", process.argv.slice(2), {
+    preferLocal: true
+});
 rescriptsProcess.stdout(process.stdout);
 
 rescriptsProcess
     .finally(() => {
         process.exit(process.exitCode);
     })
-
