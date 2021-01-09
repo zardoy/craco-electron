@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "A simple Rescripts configuration for Electron apps",
     "bin": {
-        "rescripts-electron": "rescripts-electron"
+        "rescripts-electron": "src/rescripts-electron.js"
     },
     "repository": "https://github.com/zardoy/rescripts-electron.git",
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
