@@ -16,7 +16,7 @@ const rescriptsProcess = execa("rescripts", process.argv.slice(2), {
     preferLocal: true
 });
 rescriptsProcess.stdout.pipe(process.stdout);
-// rescriptsProcess.stderr.pipe(process.stderr);
+rescriptsProcess.stderr.pipe(process.stderr);
 
 rescriptsProcess
     .finally(() => {
