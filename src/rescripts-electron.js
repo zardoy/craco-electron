@@ -15,7 +15,8 @@ mockRequire(path.join(projectRoot, rescriptsrcFile), rescriptsrcFile);
 const rescriptsProcess = execa("rescripts", process.argv.slice(2), {
     preferLocal: true
 });
-rescriptsProcess.stdout(process.stdout);
+rescriptsProcess.stdout.pipe(process.stdout);
+// rescriptsProcess.stderr.pipe(process.stderr);
 
 rescriptsProcess
     .finally(() => {
