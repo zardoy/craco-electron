@@ -9,9 +9,6 @@
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
     "dependencies": {
-        "@babel/cli": "^7.12.10",
-        "@babel/core": "^7.12.10",
-        "@babel/preset-env": "^7.12.11",
         "@craco/craco": "^6.0.0",
         "execa": "^5.0.0",
         "react-scripts": "^4.0.1"
