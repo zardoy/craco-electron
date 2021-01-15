@@ -26,6 +26,6 @@
         "custom configuration",
         "react-app-rewired",
         "rescripts",
-        "target renderer"
+        "target electron renderer"
     ]
 }
