@@ -5,7 +5,7 @@ const execa = require("execa");
 
 const cracoProcess = execa(
     "craco",
-    [process.env[2], "--config", require.resolve("craco.config.js")],
+    [process.env[2], "--config", require.resolve("./craco.config.js")],
     { preferLocal: true }
 );
 cracoProcess.stdout.pipe(process.stdout);
