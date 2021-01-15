@@ -1,11 +1,11 @@
 {
-    "name": "rescripts-electron",
-    "version": "1.0.0",
-    "description": "A simple Rescripts configuration for Electron apps",
+    "name": "craco-electron",
+    "version": "0.0.0-development",
+    "description": "A simple CRACO configuration for Electron apps",
     "bin": {
         "craco-electron": "src/index.js"
     },
-    "repository": "https://github.com/zardoy/rescripts-electron.git",
+    "repository": "https://github.com/zardoy/craco-electron.git",
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
     "dependencies": {
