@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "A simple Rescripts configuration for Electron apps",
     "bin": {
-        "rescripts-electron": "src/rescripts-electron.js"
+        "craco-electron": "src/index.js"
     },
     "repository": "https://github.com/zardoy/rescripts-electron.git",
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
@@ -12,9 +12,20 @@
         "@babel/cli": "^7.12.10",
         "@babel/core": "^7.12.10",
         "@babel/preset-env": "^7.12.11",
-        "@rescripts/cli": "^0.0.15",
+        "@craco/craco": "^6.0.0",
         "execa": "^5.0.0",
-        "mock-require": "^3.0.3",
         "react-scripts": "^4.0.1"
-    }
+    },
+    "keywords": [
+        "react electron",
+        "electron",
+        "craco",
+        "react-scripts",
+        "create-react-app",
+        "config",
+        "custom configuration",
+        "react-app-rewired",
+        "rescripts",
+        "target renderer"
+    ]
 }
