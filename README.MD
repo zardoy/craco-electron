@@ -2,6 +2,7 @@
 
 A simple [CRACO](https://www.npmjs.com/package/@craco/craco) configuration for [Electron](http://electronjs.org/) apps.
 
+> `react-scripts` already included in dependencies. You don't need to install it.
 <!-- You can treat this package as a react-scripts which modifies webpack config: `target: "electron-renderer"`, so your IPC *will* work. -->
 
 - [CRACO Electron](#craco-electron)
@@ -38,3 +39,4 @@ A simple [CRACO](https://www.npmjs.com/package/@craco/craco) configuration for [
 ## TODO
 
 - Script `start-main` for starting Electron process
+- Change default `src/` to `src/react/`
