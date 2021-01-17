@@ -8,6 +8,9 @@
     "repository": "https://github.com/zardoy/craco-electron.git",
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
+    "files": [
+        "src"
+    ],
     "dependencies": {
         "@craco/craco": "^6.0.0",
         "execa": "^5.0.0",
