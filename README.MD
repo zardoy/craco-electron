@@ -8,6 +8,7 @@ A simple [CRACO](https://www.npmjs.com/package/@craco/craco) configuration for [
 - [CRACO Electron](#craco-electron)
   - [TL;DR](#tldr)
   - [Default Presets](#default-presets)
+  - [Runtime usage](#runtime-usage)
   - [TODO](#todo)
 
 ## TL;DR
@@ -36,6 +37,15 @@ A simple [CRACO](https://www.npmjs.com/package/@craco/craco) configuration for [
 - `PUBLIC_URL=./`
 
 > Note: you can still override this variables.
+
+## Runtime usage
+
+This library brings not only cli. You can use these helpers in runtime:
+
+- `getFileFromPublic`
+- `getMainPageUrl`
+
+For api see `src/`.
 
 ## TODO
 
