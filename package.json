@@ -4,7 +4,7 @@
     "description": "A drop-in replacement for react-scripts for Electron apps",
     "bin": "build/bin.js",
     "main": "build/index.js",
-    "types": "build",
+    "types": "build/index.d.ts",
     "repository": "https://github.com/zardoy/craco-electron.git",
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
