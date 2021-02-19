@@ -3,6 +3,8 @@
     "version": "0.0.0-development",
     "description": "A simple CRACO configuration for Electron apps",
     "bin": "build/bin.js",
+    "main": "build/index.js",
+    "types": "build",
     "repository": "https://github.com/zardoy/craco-electron.git",
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
