@@ -9,7 +9,7 @@
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
     "files": [
-        "src"
+        "build"
     ],
     "scripts": {
         "prepublishOnly": "tsc"
