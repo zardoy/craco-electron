@@ -2,7 +2,10 @@ import electronIsDev from "electron-is-dev";
 import path from "path";
 import pkgDir from "pkg-dir";
 
+// for external configuration
 export let compiledAssetsPath = `../${process.env.BUILD || "build"}`;
+// could be changed to 404.html for example
+export let mainPageFile = "index.html";
 
 // todo make typed
 /**
@@ -24,5 +27,5 @@ export const getFileFromPublic = (pathToFile: string): string => {
 export const getMainPageUrl = () => {
     let host = process.env.HOST || "localhost";
     if (!host.startsWith("http")) host = `http://${host}`;
-    return electronIsDev ? "http://localhost:3500" : `file://${getFileFromPublic("index.html")}`;
+    return electronIsDev ? `${host}:${process.env.PORT}` : `file://${getFileFromPublic(mainPageFile)}`;
 };
