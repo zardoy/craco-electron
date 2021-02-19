@@ -12,7 +12,7 @@ A simple [CRACO](https://www.npmjs.com/package/@craco/craco) configuration for [
 
 ## TL;DR
 
-1. Install this package
+1. Install it: `npm` or `yarn add craco-electron`
 
 2. In your `package.json`:
 
@@ -33,8 +33,9 @@ A simple [CRACO](https://www.npmjs.com/package/@craco/craco) configuration for [
 
 - `PORT=3500`
 - `BROWSER=none`
+- `PUBLIC_URL=./`
 
-> Note: you could still override this variables.
+> Note: you can still override this variables.
 
 ## TODO
 

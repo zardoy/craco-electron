@@ -2,19 +2,25 @@
     "name": "craco-electron",
     "version": "0.0.0-development",
     "description": "A simple CRACO configuration for Electron apps",
-    "bin": {
-        "craco-electron": "src/index.js"
-    },
+    "bin": "build/bin.js",
     "repository": "https://github.com/zardoy/craco-electron.git",
     "author": "Vitaly Turovsky <vital2580@icloud.com>",
     "license": "MIT",
     "files": [
         "src"
     ],
+    "scripts": {
+        "prepublishOnly": "tsc"
+    },
     "dependencies": {
         "@craco/craco": "^6.0.0",
+        "electron-is-dev": "^1.2.0",
         "execa": "^5.0.0",
+        "pkg-dir": "^5.0.0",
         "react-scripts": "^4.0.1"
+    },
+    "devDependencies": {
+        "typescript": "^4.1.5"
     },
     "keywords": [
         "react electron",

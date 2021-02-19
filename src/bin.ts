@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 
-const execa = require("execa");
-// assumed that the command executed from the NPM script in root package.json
+import execa from "execa";
+
+// assumed that the command executed from the NPM script from app root
 
 ((envDefaults) => {
     Object.entries(envDefaults).forEach(([envVar, defaultValue]) => {
-        if (!process.env[envVar]) process.env[envVar] = defaultValue;
-    })
+        if (!process.env[envVar]) process.env[envVar] = defaultValue.toString();
+    });
 })({
     PORT: 3500,
-    BROWSER: "none"
-})
+    BROWSER: "none",
+    PUBLIC_URL: "./"
+});
 
 const scriptName = process.argv[2];
 
@@ -26,4 +28,4 @@ const cracoProcess = execa(
 cracoProcess
     .finally(() => {
         process.exit(process.exitCode);
-    })
+    });
