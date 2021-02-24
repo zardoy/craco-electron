@@ -9,6 +9,7 @@ A simple [CRACO](https://www.npmjs.com/package/@craco/craco) configuration for [
   - [TL;DR](#tldr)
   - [Default Presets](#default-presets)
   - [Runtime usage](#runtime-usage)
+  - [Start-electron](#start-electron)
   - [TODO](#todo)
 
 ## TL;DR
@@ -46,6 +47,17 @@ This library brings not only cli. You can use these helpers in runtime:
 - `getMainPageUrl`
 
 For api see `src/`.
+
+## Start-electron
+
+I highly recommend to use this script `start-electron` for starting electron in dev (instead of *electron-forge* for example).
+
+Why:
+
+- It automatically launches in `tsc` in watch mode, it means that you don't need to rerun your script when you change file
+- Less boilerplates:
+  - Entrypoint file: `
+  - 
 
 ## TODO
 
