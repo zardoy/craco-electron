@@ -1,9 +1,11 @@
 import electronIsDev from "electron-is-dev";
 import path from "path";
 import pkgDir from "pkg-dir";
+import fs from "fs";
+import { cracoElectronLaunchFile } from "./shared";
 
-// for external configuration
-export let compiledAssetsPath = `../${process.env.BUILD || "build"}`;
+// these vars are for external configuration
+export let compiledAssetsPath = `../build`;
 // could be changed to 404.html for example
 export let mainPageFile = "index.html";
 
@@ -25,7 +27,22 @@ export const getFileFromPublic = (pathToFile: string): string => {
 };
 
 export const getMainPageUrl = () => {
-    let host = process.env.HOST || "localhost";
-    if (!host.startsWith("http")) host = `http://${host}`;
-    return electronIsDev ? `${host}:${process.env.PORT}` : `file://${getFileFromPublic(mainPageFile)}`;
+    if (electronIsDev) {
+        if (!fs.existsSync(cracoElectronLaunchFile)) {
+            return path.join(__dirname, "assets/server-not-started.html");
+        } else {
+            const launchConfig = JSON.parse(fs.readFileSync(cracoElectronLaunchFile, "utf-8"));
+            if (!("starting" in launchConfig)) throw new Error("Incorrect launch config. Rerun `craco-electron start` command");
+            let { HOST = "localhost", PORT } = launchConfig.reactScripts;
+            if (!HOST.startsWith("http")) HOST = `http://${HOST}`;
+            const url = `${HOST}:${PORT}`;
+            if (launchConfig.starting) {
+                return path.join(__dirname, "assets/server-not-started.html");
+            } else {
+                return url;
+            }
+        }
+    } else {
+        return `file://${getFileFromPublic(mainPageFile)}`;
+    }
 };
