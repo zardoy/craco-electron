@@ -1,43 +1,69 @@
 # CRACO Electron
 
-A simple [CRACO](https://www.npmjs.com/package/@craco/craco) configuration for [Electron](http://electronjs.org/) apps.
+I personally think it's the best tool for developing every Electron application.
+It's some sort a replacement for `electron-forge` for starting both main and renderer process.
 
 > `react-scripts` already included in dependencies. You don't need to install it.
-<!-- You can treat this package as a react-scripts which modifies webpack config: `target: "electron-renderer"`, so your IPC *will* work. -->
+> peer dependencies (they must be installed): `electron`, `typescript`
 
 - [CRACO Electron](#craco-electron)
-  - [TL;DR](#tldr)
-  - [Default Presets](#default-presets)
+  - [Usage](#usage)
+    - [New projects](#new-projects)
+    - [Existing projects](#existing-projects)
+  - [Why this?](#why-this)
+  - [Defaults](#defaults)
   - [Runtime usage](#runtime-usage)
-  - [Start-electron](#start-electron)
+  - [Things to note](#things-to-note)
   - [TODO](#todo)
 
-## TL;DR
+## Usage
 
-1. Install it: `npm` or `yarn add craco-electron`
+### New projects
 
-2. In your `package.json`:
+To be done
+
+### Existing projects
+
+1. Install it: `npm i craco-electron` or `yarn add craco-electron`
+
+2. In your `package.json` add (or replace) scripts for `main` and `renderer` sides:
 
 ```diff
 {
     ...
     "scripts": {
++       "start:main": "craco-electron start-main",
 -       "start": "react-scripts start",
-+       "start-renderer": "craco-electron start",
++       "start:renderer": "craco-electron start",
 -       "build": "react-scripts start",
-+       "build-renderer": "craco-electron build"
++       "build:renderer": "craco-electron build"
     }
     ...
 }
 ```
 
-## Default Presets
+## Why this?
+
+- Dead simple electron main process development -- just save the file and you'll see changes instantly.
+You don't need to write `rs` every time in console anymore.
+
+- Dead simple configuration: new config files at all.
+
+- Graceful pages if renderer side (webpack-server) is starting or not available
+
+## Defaults
+
+This library brings some reasonable defaults (of course you still could override them).
+
+Default `react-scripts` environment variables:
 
 - `PORT=3500`
 - `BROWSER=none`
 - `PUBLIC_URL=./`
 
-> Note: you can still override this variables.
+Electron (main process part):
+
+- Entrypoint automatically selected from tsconfig.json: `
 
 ## Runtime usage
 
@@ -48,18 +74,13 @@ This library brings not only cli. You can use these helpers in runtime:
 
 For api see `src/`.
 
-## Start-electron
+## Things to note
 
-I highly recommend to use this script `start-electron` for starting electron in dev (instead of *electron-forge* for example).
-
-Why:
-
-- It automatically launches in `tsc` in watch mode, it means that you don't need to rerun your script when you change file
-- Less boilerplates:
-  - Entrypoint file: `
-  - 
+- jsconfig.json is just ignored
+- I don't better lib that this one
 
 ## TODO
 
+- Doesn't work with dynamic port (if you choose yes on unavailable port)
 - Script `start-main` for starting Electron process
 - Change default `src/` to `src/react/`
